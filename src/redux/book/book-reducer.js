@@ -17,6 +17,11 @@ const bookReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 books: state.books.filter(book => book.id !== action.payload.id)
             }
+        case bookActionTypes.EDIT_BOOK:
+            return {
+                ...state,
+                books: state.books.map((book) => book.id === action.id ? {...book,editing:!book.editing}:book)
+            }
         default: 
             return state;
     }

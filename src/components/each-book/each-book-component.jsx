@@ -1,9 +1,12 @@
 import React from 'react';
 import './each-book.scss';
 
+import {Link} from 'react-router-dom';
+
 import { connect } from 'react-redux';
 
 import {deleteBook} from '../../redux/book/book-actions';
+
 
 const EachBook = ({book, deleteBook}) => (
     <div className='each-book'>
@@ -12,7 +15,7 @@ const EachBook = ({book, deleteBook}) => (
         <p>Category: {book.category}</p>
         <p>Description: {book.description} </p>
 
-        <button>EDIT</button>
+        <Link to='/editbook'>Click To Edit </Link> 
 
 
         <div
@@ -21,11 +24,6 @@ const EachBook = ({book, deleteBook}) => (
             Delete  &#10005;
         </div>
 
-        <div
-            className='remove-button'
-            onClick={() => console.log('hi')}>
-            Delete again  &#10005;
-        </div>
     </div>
 )
 

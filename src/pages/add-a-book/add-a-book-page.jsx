@@ -32,7 +32,7 @@ class AddABookPage extends Component {
         
         // adds to array in redux
         const id = uuidv1();
-        this.props.addBook({title, price, category, description, id})
+        this.props.addBook({title, price, category, description, id, editing: false})
         // resets field empty
         this.setState({
             title: '',
