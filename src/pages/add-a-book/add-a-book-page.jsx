@@ -45,7 +45,7 @@ class AddABookPage extends Component {
     }
 
     render() {
-        const {title, price, category, description, id} = this.state;
+        const {title, price, category, description} = this.state;
 
         return (
             <React.Fragment>
