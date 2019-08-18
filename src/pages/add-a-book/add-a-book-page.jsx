@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './add-a-book-page';
+import uuidv1 from "uuid";
 
 import { Link } from 'react-router-dom';
 
@@ -14,20 +15,23 @@ class AddABookPage extends Component {
             price: '',
             category: '',
             description: '',
+            id: '',
         }
     }
 
     handleChange = e => {
         this.setState({
-            [e.target.id]: e.target.value
+            [e.target.id]: e.target.value,
+            id: new Date()
         })
     }
 
     handleSubmit = e => {
         e.preventDefault();
         const { title, price, category, description} = this.state;
-        const id = e.target.value;
+        
         // adds to array in redux
+        const id = uuidv1();
         this.props.addBook({title, price, category, description, id})
         // resets field empty
         this.setState({
@@ -35,12 +39,13 @@ class AddABookPage extends Component {
             price: '',
             category: '',
             description: '',
+            id: '',
         })
 
     }
 
     render() {
-        const {title, price, category, description} = this.state;
+        const {title, price, category, description, id} = this.state;
 
         return (
             <React.Fragment>
