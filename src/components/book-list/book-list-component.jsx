@@ -1,23 +1,25 @@
 import React, {Component} from 'react';
 import './book-list.scss';
 
+import { connect } from 'react-redux';
+
 import EachBook from '../each-book/each-book-component';
 
 
-
-
-// {
-//     books.map(({ id, ...otherBooksProps }) => (
-//         <EachBook key={id} {...otherBooksProps}
-//         />
-//     ))
-// }
 const BookList = ({books}) => (
-
-
     <div className='book-list'>
-        hi
+        <div className="each-book-container">
+            {
+                books.map(book =>(
+                    <EachBook key={book.id} book={book}/>
+                ))
+            }
+        </div>
     </div>
 )
 
-export default BookList;
+const mapStateToProps = ({ book: { books } }) => ({
+    books
+})
+
+export default connect(mapStateToProps)(BookList);

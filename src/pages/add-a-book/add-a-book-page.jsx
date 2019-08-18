@@ -27,7 +27,9 @@ class AddABookPage extends Component {
         e.preventDefault();
         const { title, price, category, description} = this.state;
         const id = e.target.value;
+        // adds to array in redux
         this.props.addBook({title, price, category, description, id})
+        // resets field empty
         this.setState({
             title: '',
             price: '',
@@ -87,11 +89,9 @@ class AddABookPage extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        addBook: book => dispatch(addBook(book))
-    };
-}
+const mapDispatchToProps = dispatch => ({
+    addBook: book => dispatch(addBook(book))
+})
 
 export default connect(
     null,
