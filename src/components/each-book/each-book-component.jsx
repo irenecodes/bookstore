@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-import {deleteBook} from '../../redux/book/book-actions';
+import {editBook, deleteBook} from '../../redux/book/book-actions';
 
 
 const EachBook = ({book, deleteBook}) => (
@@ -15,7 +15,13 @@ const EachBook = ({book, deleteBook}) => (
         <p>Category: {book.category}</p>
         <p>Description: {book.description} </p>
 
-        <Link to='/editbook'>Click To Edit </Link> 
+        <Link 
+            to='/editbook'
+            onClick={() => editBook(book)}
+        
+        >
+            Click To Edit 
+        </Link> 
 
 
         <div
@@ -29,7 +35,11 @@ const EachBook = ({book, deleteBook}) => (
 
 
 const mapDispatchToProps = dispatch => ({
-    deleteBook: book => dispatch(deleteBook(book))
+    deleteBook: book => dispatch(deleteBook(book)),
+
+    editBook: book => dispatch(editBook(book))
 })
+
+
 
 export default connect(null, mapDispatchToProps)(EachBook);

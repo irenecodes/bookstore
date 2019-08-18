@@ -15,3 +15,8 @@ export const editBook = book => ({
     type: bookActionTypes.EDIT_BOOK,
     payload:book
 })
+
+export const updateBook = book => ({
+    type: bookActionTypes.UPDATE_BOOK,
+    payload: book
+})
