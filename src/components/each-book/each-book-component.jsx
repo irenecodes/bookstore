@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-import {editBook, deleteBook} from '../../redux/book/book-actions';
+import {deleteBook} from '../../redux/book/book-actions';
 
 
 const EachBook = ({book, deleteBook}) => (
@@ -36,7 +36,7 @@ const EachBook = ({book, deleteBook}) => (
 const mapDispatchToProps = dispatch => ({
     deleteBook: book => dispatch(deleteBook(book)),
 
-    editBook: book => dispatch(editBook(book))
+
 })
 
 

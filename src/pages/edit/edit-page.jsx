@@ -29,8 +29,11 @@ class EditPage extends Component {
     handleEdit = e => {
         e.preventDefault();
         const { title, price, category, description} = this.state;
+        const {id} = this.props.book;
 
-        this.props.updateBook({ title, price, category, description, id: this.props.book.id});
+        this.props.updateBook({ title, price, category, description, id});
+        console.log(id);
+
 
         this.setState({
             title: '',
@@ -86,15 +89,15 @@ class EditPage extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        book: state
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         book: state
+//     }
+// }
 
-// const mapStateToProps = ({ book: { books } }) => ({
-//     books
-// })
+const mapStateToProps = ({ book: { books } }) => ({
+    books
+})
 
 const mapDispatchToProps = dispatch => ({
     updateBook: book => dispatch(updateBook(book))

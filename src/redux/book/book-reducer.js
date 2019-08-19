@@ -22,23 +22,15 @@ const bookReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 books: state.books.map((book) => {
-                    if (book.id === action.id) {
-                        //    return {
-                        //        ...book,
-                        //        title: action.data.newTitle,
-                        //        price: action.data.newPrice,
-                        //        category: action.data.newCategory,
-                        //        description: action.data.newDescription,
-                        //        editing: !book.editing
-                        //    }
+                    if (book.id === action.payload.id) {
                         return {
-                            ...book,
                             title: book.title,
                             price: book.price,
                             category: book.category,
                             description: book.description,
-                            editing: !book.editing
                         }
+                    } else {
+                        return book;
                     }
                 })
           
