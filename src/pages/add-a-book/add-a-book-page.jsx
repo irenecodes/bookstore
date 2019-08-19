@@ -15,14 +15,12 @@ class AddABookPage extends Component {
             price: '',
             category: '',
             description: '',
-            id: '',
         }
     }
 
     handleChange = e => {
         this.setState({
             [e.target.id]: e.target.value,
-            id: new Date()
         })
     }
 
@@ -32,7 +30,7 @@ class AddABookPage extends Component {
         
         // adds to array in redux
         const id = uuidv1();
-        this.props.addBook({title, price, category, description, id, editing: false})
+        this.props.addBook({title, price, category, description, id})
         // resets field empty
         this.setState({
             title: '',

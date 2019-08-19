@@ -17,26 +17,30 @@ const bookReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 books: state.books.filter(book => book.id !== action.payload.id)
             }
-        case bookActionTypes.EDIT_BOOK:
-            return {
-                ...state,
-                books: state.books.map((book) => book.id === action.id ? {...book,editing:!book.editing}:book)
-            }
+
         case bookActionTypes.UPDATE_BOOK:
             return {
-               ...state,
-               books: state.books.map((book) => {
-                   if (book.id === action.id) {
-                       return {
-                           ...book,
-                           title: action.data.newTitle,
-                           price: action.data.newPrice,
-                           category: action.data.newCategory,
-                           description: action.data.newDescription,
-                           editing: !book.editing
-                       }
-                   }
-               })
+                ...state,
+                books: state.books.map((book) => {
+                    if (book.id === action.id) {
+                        //    return {
+                        //        ...book,
+                        //        title: action.data.newTitle,
+                        //        price: action.data.newPrice,
+                        //        category: action.data.newCategory,
+                        //        description: action.data.newDescription,
+                        //        editing: !book.editing
+                        //    }
+                        return {
+                            ...book,
+                            title: book.title,
+                            price: book.price,
+                            category: book.category,
+                            description: book.description,
+                            editing: !book.editing
+                        }
+                    }
+                })
           
             } 
 

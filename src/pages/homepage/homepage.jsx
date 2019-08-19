@@ -12,7 +12,6 @@ const HomePage = ({books}) => (
         {/*goes to new page*/}
         <Link className='add-book-link' to='/addabook'>Add a book</Link>
 
-
         <BookList books={books}/>
 
     </div>

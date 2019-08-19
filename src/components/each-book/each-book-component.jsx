@@ -17,7 +17,6 @@ const EachBook = ({book, deleteBook}) => (
 
         <Link 
             to='/editbook'
-            onClick={() => editBook(book)}
         
         >
             Click To Edit 
