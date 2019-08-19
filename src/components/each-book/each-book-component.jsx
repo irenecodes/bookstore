@@ -17,9 +17,8 @@ const EachBook = ({book, deleteBook}) => (
 
         <Link 
             to='/editbook'
-        
         >
-            Click To Edit 
+            Edit 
         </Link> 
 
 
@@ -35,8 +34,6 @@ const EachBook = ({book, deleteBook}) => (
 
 const mapDispatchToProps = dispatch => ({
     deleteBook: book => dispatch(deleteBook(book)),
-
-
 })
 
 

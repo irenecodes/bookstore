@@ -37,7 +37,6 @@ class AddABookPage extends Component {
             price: '',
             category: '',
             description: '',
-            id: '',
         })
 
     }
@@ -47,42 +46,57 @@ class AddABookPage extends Component {
 
         return (
             <React.Fragment>
+                <div className="wrapper">
+                    <h3>Book Entry</h3>
+                    <p>Type in your book entry below and click "ADD BOOK" when done to add to the book store. Use your browser's back key or click "RETURN TO HOMEPAGE" to see your entire book store. </p>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="title">Book Title:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="title"
-                            value={title}
-                            onChange={this.handleChange}
-                        />
-                        <label htmlFor="price">Price in $:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="price"
-                            value={price}
-                            onChange={this.handleChange}
-                        />
-                        <label htmlFor="category">Category:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="category"
-                            value={category}
-                            onChange={this.handleChange}
-                        />
-                        <label htmlFor="description">Description:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="description"
-                            value={description}
-                            onChange={this.handleChange}
-                        />
+                        <div className='input-field'>
+                            <label htmlFor="title">Book Title:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="title"
+                                value={title}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                        
+                        <div className='input-field'>
+                            <label htmlFor="price">Price in $:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="price"
+                                value={price}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+
+                        <div className='input-field'>
+                            <label htmlFor="category">Category:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="category"
+                                value={category}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+
+                        <div className='input-field'>
+                            <label htmlFor="description">Description:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="description"
+                                value={description}
+                                onChange={this.handleChange}
+                            />
+                        </div>
                     </div>
-                    <button type="submit">
+                    <button type="submit" className="add-book-link">
                         ADD BOOK
                     </button>
                 </form>

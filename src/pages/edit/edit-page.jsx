@@ -29,10 +29,12 @@ class EditPage extends Component {
     handleEdit = e => {
         e.preventDefault();
         const { title, price, category, description} = this.state;
-        const {id} = this.props.book;
+        // const {id} = this.props.book;
 
-        this.props.updateBook({ title, price, category, description, id});
-        console.log(id);
+        
+
+        this.props.updateBook({ title, price, category, description});
+        // console.log(id);
 
 
         this.setState({
@@ -51,35 +53,43 @@ class EditPage extends Component {
                 <h4>Enter corrections below in the corresponding fields:</h4>
 
                 <form onSubmit={this.handleEdit}>
-                        <label htmlFor="title">Book Title:</label>
-                        <input 
-                            required type="text" 
-                            value={title} placeholder="Enter Book Title"
-                            onChange={this.handleChange}
-                            id="title"
-                        />
-                        <label htmlFor="price">Price:</label>
-                        <input
-                            required type="text" 
-                            value={price} placeholder="Enter Book Price"
-                            onChange={this.handleChange}
-                            id="price"
-                        />
-                        <label htmlFor="category">Category:</label>
-                        <input
-                            required type="text" 
-                            value={category} placeholder="Enter Book category"
-                            onChange={this.handleChange}
-                            id="category"
-                        />
-                        <label htmlFor="description">Description</label>
-                        <input
-                            required type="text" 
-                            value={description} placeholder="Enter Book description"
-                            onChange={this.handleChange}
-                            id="description"
-                        />
-                    <button>
+                        <div className='input-field'>
+                            <label htmlFor="title">Book Title:</label>
+                            <input 
+                                required type="text" 
+                                value={title} placeholder="Enter book title"
+                                onChange={this.handleChange}
+                                id="title"
+                            />
+                        </div>
+                        <div className='input-field'>
+                            <label htmlFor="price">Price:</label>
+                            <input
+                                required type="text" 
+                                value={price} placeholder="Enter book price"
+                                onChange={this.handleChange}
+                                id="price"
+                            />
+                        </div>
+                        <div className='input-field'>
+                            <label htmlFor="category">Category:</label>
+                            <input
+                                required type="text" 
+                                value={category} placeholder="Enter book category"
+                                onChange={this.handleChange}
+                                id="category"
+                            />
+                        </div>
+                        <div className='input-field'>
+                            <label htmlFor="description">Description</label>
+                            <input
+                                required type="text" 
+                                value={description} placeholder="Enter book description"
+                                onChange={this.handleChange}
+                                id="description"
+                            />
+                        </div>
+                    <button type="submit" className="edit-book-link">
                         Submit edits
                     </button>
                 </form>

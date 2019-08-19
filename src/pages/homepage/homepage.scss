@@ -1,7 +1,12 @@
-.add-book-link {
+h1 {
+    margin: 20px;
+}
+
+.add-book-link, .edit-book-link {
     border: 1px solid black;
     padding:10px;
-    margin: 10px;
+    margin: 20px;
     border-radius: 5px;
     text-decoration: none;
+    color: green;
 }

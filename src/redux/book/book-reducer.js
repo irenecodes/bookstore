@@ -19,22 +19,25 @@ const bookReducer = (state = INITIAL_STATE, action) => {
             }
 
         case bookActionTypes.UPDATE_BOOK:
+            // return {
+            //     ...state,
+            //     books: state.books.map((book) => {
+            //         if (book.id === action.payload.id) {
+            //             return {
+            //                 title: book.title,
+            //                 price: book.price,
+            //                 category: book.category,
+            //                 description: book.description,
+            //             }
+            //         } else {
+            //             return book;
+            //         }
+            //     })
+            // } 
             return {
                 ...state,
-                books: state.books.map((book) => {
-                    if (book.id === action.payload.id) {
-                        return {
-                            title: book.title,
-                            price: book.price,
-                            category: book.category,
-                            description: book.description,
-                        }
-                    } else {
-                        return book;
-                    }
-                })
-          
-            } 
+                books: state.books.find(book => book.id === action.payload.id)
+            }
 
         default: 
             return state;

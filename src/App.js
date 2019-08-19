@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 
+import { connect } from 'react-redux';
+
 import {Switch, Route} from 'react-router-dom';
 
 import AddABookPage from './pages/add-a-book/add-a-book-page';
@@ -17,12 +19,20 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/addabook' component={AddABookPage}/>
-          <Route path ='/editbook' component={EditPage} />
+          <Route 
+            path ='/editbook' 
+            render={(books => <EditPage books={ books }/>)}
+            // component={EditPage} 
+          />
         </Switch>
       </div>
     )
   } 
 }
 
-export default App;
+const mapStateToProps = ({ book: { books } }) => ({
+  books
+})
+
+export default connect(mapStateToProps)(App);
 

@@ -7,7 +7,7 @@ import EachBook from '../each-book/each-book-component';
 
 
 const BookList = ({books}) => (
-    <div className='book-list'>
+    <div className='book-list wrapper'>
         <div className="each-book-container">
             {
                 books.map(book =>(
