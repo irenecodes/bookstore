@@ -21,7 +21,6 @@ class App extends Component {
           <Route path='/addabook' component={AddABookPage}/>
           <Route 
             path ='/editbook' 
-            // render={(books => <EditPage books={ books }/>)}
             component={EditPage} 
           />
         </Switch>

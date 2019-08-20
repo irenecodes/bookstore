@@ -28,13 +28,14 @@ class EditPage extends Component {
 
     handleEdit = e => {
         e.preventDefault();
-        const { title, price, category, description} = this.state;
-        // const {id} = this.props.book;
+        // const { title, price, category, description} = this.state;
+
+        const {book: {title, price, category, description, id}} = this.props.location.state;
 
         
 
-        this.props.updateBook({ title, price, category, description});
-        // console.log(id);
+        this.props.updateBook({ title, price, category, description, id});
+        console.log(id);
 
 
         this.setState({
