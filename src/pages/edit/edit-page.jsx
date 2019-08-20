@@ -7,9 +7,6 @@ import { Link } from 'react-router-dom';
 import { updateBook } from '../../redux/book/book-actions'
 
 class EditPage extends Component {
-
-    // need to pass in current values for the book that needs to be edited
-
     constructor() {
         super();
         this.state = {
@@ -28,16 +25,9 @@ class EditPage extends Component {
 
     handleEdit = e => {
         e.preventDefault();
-        // const { title, price, category, description} = this.state;
-
-        const {book: {title, price, category, description, id}} = this.props.location.state;
-
-        
-
+        const { title, price, category, description} = this.state;
+        const {book:{id}} = this.props.location.state;
         this.props.updateBook({ title, price, category, description, id});
-        console.log(id);
-
-
         this.setState({
             title: '',
             price: '',
@@ -45,14 +35,12 @@ class EditPage extends Component {
             description: '',
         })
     }
-    
-    
+       
     render() {
         const { title, price, category, description } = this.state;
         return (
             <div>
                 <h4>Enter corrections below in the corresponding fields:</h4>
-
                 <form onSubmit={this.handleEdit}>
                         <div className='input-field'>
                             <label htmlFor="title">Book Title:</label>
@@ -100,11 +88,6 @@ class EditPage extends Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return {
-//         book: state
-//     }
-// }
 
 const mapStateToProps = ({ book: { books } }) => ({
     books
@@ -113,7 +96,6 @@ const mapStateToProps = ({ book: { books } }) => ({
 const mapDispatchToProps = dispatch => ({
     updateBook: book => dispatch(updateBook(book))
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPage);
 

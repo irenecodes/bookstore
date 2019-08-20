@@ -14,14 +14,7 @@ const EachBook = ({book, deleteBook}) => (
         <p>Price in $: {book.price} </p>
         <p>Category: {book.category}</p>
         <p>Description: {book.description} </p>
-{/* 
-        <Link 
-            to='/editbook'
-            
-        >
-            Edit 
-        </Link> 
-*/}
+        
         <Link to={{
             pathname: '/editbook',
             state: {

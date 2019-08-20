@@ -19,28 +19,13 @@ const bookReducer = (state = INITIAL_STATE, action) => {
             }
 
         case bookActionTypes.UPDATE_BOOK:
-            return {
-                ...state,
-                books: state.books.map((book) => {
-                    if (book.id === action.payload.id) {
-                        return {
-                            title: action.payload.title,
-                            price: action.payload.price,
-                            category: action.payload.category,
-                            description: action.payload.description,
-                        }
-                    } else {
-                        return book;
-                    }
-                })
-            } 
-            // return {
-            //     ...state,
-
-            //     // write a function here to allow update of indiv books in books array
-            //     books: state.books.find(book => book.id === action.payload.id)
-            // }
-
+            const editedBooks = state.books.map(book => {
+                if (book.id === action.payload.id) {
+                    return action.payload;
+                }
+                return book;
+            });
+            return { ...state, books: editedBooks };
         default: 
             return state;
     }
