@@ -55,6 +55,7 @@ class AddABookPage extends Component {
                         <div className='input-field'>
                             <label htmlFor="title">Book Title:</label>
                             <input
+                                required
                                 type="text"
                                 className="form-control"
                                 id="title"
@@ -66,6 +67,7 @@ class AddABookPage extends Component {
                         <div className='input-field'>
                             <label htmlFor="price">Price in $:</label>
                             <input
+                                required
                                 type="text"
                                 className="form-control"
                                 id="price"
@@ -77,6 +79,7 @@ class AddABookPage extends Component {
                         <div className='input-field'>
                             <label htmlFor="category">Category:</label>
                             <input
+                                required
                                 type="text"
                                 className="form-control"
                                 id="category"
@@ -88,6 +91,7 @@ class AddABookPage extends Component {
                         <div className='input-field'>
                             <label htmlFor="description">Description:</label>
                             <input
+                                required
                                 type="text"
                                 className="form-control"
                                 id="description"
