@@ -40,7 +40,7 @@ class EachBook extends Component {
         const {book} = this.props;
         return (
             <div className='each-book'>
-                <h4>Title: {book.title}</h4>
+                <p>Title: {book.title}</p>
                 <p>Price in $: {book.price} </p>
                 <p>Category: {book.category}</p>
                 <p>Description: {book.description} </p>
@@ -50,7 +50,7 @@ class EachBook extends Component {
                     state: {
                         book: book
                     }
-                }}> Edit </Link>
+                }}> Edit &#9998;</Link>
 
 
                 <div

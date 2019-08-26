@@ -55,8 +55,7 @@ class AddABookPage extends Component {
         return (
             <div className='add-book-container'>
                 <div className='instructions'>
-                    <h3>Book Entry</h3>
-                    <p>Type in your book entry below and click "ADD BOOK" when done to add to the bookstore. Use your browser's back key or click "RETURN TO HOMEPAGE" to see your entire book store. </p>
+                    <h3>Add your book entry using the fields below:</h3>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className='input-field'>

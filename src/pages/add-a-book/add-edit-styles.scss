@@ -1,5 +1,5 @@
 .add-book-container, .edit-book-container {
-    background: url(../../assets/bg.jpg);
+    background: url(../../assets/bg2.jpg);
     height: 100vh;
     background-size: cover;
 }
@@ -23,6 +23,7 @@ form {
     flex-direction:row;
     label{
         width: 25%;
+        padding:5px;
     }
     input {
         width: 75%;
