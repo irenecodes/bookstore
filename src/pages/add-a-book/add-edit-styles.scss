@@ -1,0 +1,33 @@
+.add-book-container, .edit-book-container {
+    background: url(../../assets/bg.jpg);
+    height: 100vh;
+    background-size: cover;
+}
+
+.instructions, label, .link {
+    background: rgba(255,255,255,0.8);
+    margin: 5px;
+}
+
+.link {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form {
+    margin:30px 0;
+}
+
+.input-field {
+    display:flex;
+    flex-direction:row;
+    label{
+        width: 25%;
+    }
+    input {
+        width: 75%;
+        padding:5px;
+        margin:5px;
+    }
+}
+

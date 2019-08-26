@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import './add-a-book-page';
+import './add-edit-styles.scss';
+
 import uuidv1 from "uuid";
 
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import {addBook} from '../../redux/book/book-actions'
+import {addBook} from '../../redux/book/book-actions';
+
+import Swal from 'sweetalert2';
 
 class AddABookPage extends Component {
     constructor(){
@@ -39,73 +42,77 @@ class AddABookPage extends Component {
             description: '',
         })
 
+        Swal.fire(
+            'Success!',
+            'You have submitted your entry.',
+            'success'
+        )
     }
 
     render() {
         const {title, price, category, description} = this.state;
 
         return (
-            <React.Fragment>
-                <div className="wrapper">
+            <div className='add-book-container'>
+                <div className='instructions'>
                     <h3>Book Entry</h3>
-                    <p>Type in your book entry below and click "ADD BOOK" when done to add to the book store. Use your browser's back key or click "RETURN TO HOMEPAGE" to see your entire book store. </p>
+                    <p>Type in your book entry below and click "ADD BOOK" when done to add to the bookstore. Use your browser's back key or click "RETURN TO HOMEPAGE" to see your entire book store. </p>
                 </div>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <div className='input-field'>
-                            <label htmlFor="title">Book Title:</label>
-                            <input
-                                required
-                                type="text"
-                                className="form-control"
-                                id="title"
-                                value={title}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                        
-                        <div className='input-field'>
-                            <label htmlFor="price">Price in $:</label>
-                            <input
-                                required
-                                type="text"
-                                className="form-control"
-                                id="price"
-                                value={price}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-
-                        <div className='input-field'>
-                            <label htmlFor="category">Category:</label>
-                            <input
-                                required
-                                type="text"
-                                className="form-control"
-                                id="category"
-                                value={category}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-
-                        <div className='input-field'>
-                            <label htmlFor="description">Description:</label>
-                            <input
-                                required
-                                type="text"
-                                className="form-control"
-                                id="description"
-                                value={description}
-                                onChange={this.handleChange}
-                            />
-                        </div>
+                    <div className='input-field'>
+                        <label htmlFor="title">Book Title:</label>
+                        <input
+                            required
+                            type="text"
+                            className="form-control"
+                            id="title"
+                            value={title}
+                            onChange={this.handleChange}
+                        />
                     </div>
+                    
+                    <div className='input-field'>
+                        <label htmlFor="price">Price in $:</label>
+                        <input
+                            required
+                            type="text"
+                            className="form-control"
+                            id="price"
+                            value={price}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+
+                    <div className='input-field'>
+                        <label htmlFor="category">Category:</label>
+                        <input
+                            required
+                            type="text"
+                            className="form-control"
+                            id="category"
+                            value={category}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+
+                    <div className='input-field'>
+                        <label htmlFor="description">Description:</label>
+                        <input
+                            required
+                            type="text"
+                            className="form-control"
+                            id="description"
+                            value={description}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+
                     <button type="submit" className="add-book-link">
                         ADD BOOK
                     </button>
                 </form>
-                <Link to='/'>RETURN TO HOMEPAGE</Link> 
-            </React.Fragment>
+                <Link className='link' to='/'>RETURN TO HOMEPAGE</Link> 
+            </div>
         )
     }
 }

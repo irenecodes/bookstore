@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import './edit.scss';
 
 import { connect } from 'react-redux';
 
 import { Link } from 'react-router-dom';
-import { updateBook } from '../../redux/book/book-actions'
+import { updateBook } from '../../redux/book/book-actions';
+
+import Swal from 'sweetalert2'
 
 class EditPage extends Component {
     constructor() {
@@ -40,14 +41,22 @@ class EditPage extends Component {
         const { title, price, category, description} = this.state;
         const { book: { id }} = this.props.location.state;
         this.props.updateBook({ title, price, category, description, id});
+        Swal.fire(
+            'Success!',
+            'You have editted your entry.',
+            'success'
+        )
     }
        
     render() {
         const { title, price, category, description } = this.state;
 
         return (
-            <div>
-                <h4>Enter corrections below in the corresponding fields:</h4>
+            <div className='edit-book-container'>
+                <div className='instructions'>
+                    <h3> Enter corrections below in the corresponding fields:</h3>
+                </div>
+                
                 <form onSubmit={this.handleEdit}>
                         <div className='input-field'>
                             <label htmlFor="title">Book Title:</label>
@@ -89,7 +98,7 @@ class EditPage extends Component {
                         Submit edits
                     </button>
                 </form>
-                <Link to='/'>RETURN TO HOMEPAGE</Link>
+                <Link className='link' to='/'>RETURN TO HOMEPAGE</Link>
             </div>
         )
     }

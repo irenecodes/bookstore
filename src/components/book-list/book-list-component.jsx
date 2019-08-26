@@ -8,13 +8,11 @@ import EachBook from '../each-book/each-book-component';
 
 const BookList = ({books}) => (
     <div className='book-list wrapper'>
-        <div className="each-book-container">
-            {
-                books.map(book =>(
-                    <EachBook key={book.id} book={book}/>
-                ))
-            }
-        </div>
+        {
+            books.map(book =>(
+                <EachBook key={book.id} book={book}/>
+            ))
+        }    
     </div>
 )
 

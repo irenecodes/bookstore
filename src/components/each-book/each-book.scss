@@ -1,5 +1,11 @@
 .each-book {
-    border: 1px solid blue;
+    padding: 10px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.8);
+    transition: 0.3s ease all;
+    &:hover {
+        background:rgba(255,255,255,0.9);
+    }
 }
 
 .remove-button {
