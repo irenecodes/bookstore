@@ -68,7 +68,7 @@ class EditPage extends Component {
                             />
                         </div>
                         <div className='input-field'>
-                            <label htmlFor="price">Price:</label>
+                            <label htmlFor="price">Price in $:</label>
                             <input
                                 required type="text" 
                                 value={price} 
