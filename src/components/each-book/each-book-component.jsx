@@ -53,12 +53,12 @@ class EachBook extends Component {
                 }}> Edit &#9998;</Link>
 
 
-                <div
+                <button
                     className='remove-button'
                     onClick={this.confirmDelete}
                     >
                     Delete  &#10005;
-        </div>
+                </button>
 
             </div>
         )

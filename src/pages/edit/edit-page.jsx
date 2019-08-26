@@ -43,7 +43,7 @@ class EditPage extends Component {
         this.props.updateBook({ title, price, category, description, id});
         Swal.fire(
             'Success!',
-            'You have editted your entry.',
+            'You have edited your entry.',
             'success'
         )
     }
