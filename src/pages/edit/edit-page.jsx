@@ -95,7 +95,7 @@ class EditPage extends Component {
                             />
                         </div>
                     <button type="submit" className="edit-book-link">
-                        Submit edits
+                        SUBMIT EDITS
                     </button>
                 </form>
                 <Link className='link' to='/'>RETURN TO HOMEPAGE</Link>

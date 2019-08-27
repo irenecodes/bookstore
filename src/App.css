@@ -19,3 +19,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   width: 90%;
   margin: 0 auto;
 }
+
+body {
+  background-image: url(../src/assets/bg2.jpg);
+  height: 100vh;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  height:100vh;
+}
